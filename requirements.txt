@@ -5,3 +5,4 @@ tensorflow
 torch
 opencv-python
 matplotlib
+notebook
