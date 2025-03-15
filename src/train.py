@@ -11,4 +11,4 @@ model = models.Sequential([
     layers.Dense(1, activation="relu")  # Salida con activación ReLU para evitar valores negativos
 ])
 
-model.save("models/car_value_model.keras")
+model.save("models/car_value_model.keras") 
