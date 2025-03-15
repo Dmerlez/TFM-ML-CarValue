@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  tfm-ml:
+    build: .
+    container_name: tfm-ml-container
+    volumes:
+      - .:/app
+    ports:
+      - "8888:8888"  # Si quieres correr Jupyter
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["bash"] 
