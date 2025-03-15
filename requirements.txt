@@ -6,3 +6,6 @@ torch
 opencv-python
 matplotlib
 notebook
+flask
+pillow
+werkzeug

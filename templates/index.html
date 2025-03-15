@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Valor de Coche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sube una Imagen de un Coche</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br><br>
+            <button type="submit">Predecir Valor</button>
+        </form>
+
+        {% if image %}
+            <h2>Resultado:</h2>
+            <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Imagen del Coche">
+            <p><strong>Valor Estimado:</strong> {{ prediction }} €</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

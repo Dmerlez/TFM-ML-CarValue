@@ -4,14 +4,18 @@ FROM python:3.9-slim
 # Definir el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar los archivos de requirements.txt
+# Copiar archivos necesarios
 COPY requirements.txt .
+COPY src/ src/
+COPY models/ models/
+COPY templates/ templates/
+COPY static/ static/
 
 # Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar todo el código al contenedor
-COPY . .
+# Exponer el puerto para Flask
+EXPOSE 5000
 
-# Comando por defecto al iniciar el contenedor
-CMD ["bash"]
+# Ejecutar la aplicación Flask
+CMD ["python", "src/app.py"]
