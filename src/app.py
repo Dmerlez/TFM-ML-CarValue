@@ -43,7 +43,7 @@ def upload_and_predict():
             # Hacer predicción
             prediction = model.predict(img)
             predicted_value = prediction[0][0]
-            predicted_value = (predicted_value * 1000).round(1)
+            predicted_value = (predicted_value * 10000).round(2) 
 
 
             return render_template("index.html", image=filename, prediction=predicted_value)
