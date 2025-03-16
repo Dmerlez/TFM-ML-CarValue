@@ -8,6 +8,8 @@ model = models.Sequential([
     base_model,
     layers.GlobalAveragePooling2D(),
     layers.Dense(128, activation="relu"),
+    layers.Dense(1, activation="relu")
 ])
 
 model.save("models/car_value_model.keras") 
+ 
